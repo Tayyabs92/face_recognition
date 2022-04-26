@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS Grid </title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-image: url("/static/d2.jpg");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      color: white;
+
+    }
+
+    .header {
+      grid-area: header;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .topnav {
+      grid-area: navbar;
+      overflow: hidden;
+      background-color: #333;
+
+    }
+
+    .topnav a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .container {
+      display: grid;
+      grid-template-areas:
+        'header header header header'
+        'navbar navbar navbar navbar'
+        'section aside aside aside'
+        'section1 aside1 aside1 aside1'
+        'footer footer footer footer';
+    }
+
+    .item {
+
+      padding: 12px 23px;
+    }
+
+    #section {
+      grid-area: section;
+    }
+
+    #section1 {
+      grid-area: section1;
+    }
+
+    #aside1 {
+      grid-area: aside1;
+    }
+
+    #aside {
+      grid-area: aside;
+    }
+
+
+    .footer {
+      grid-area: footer;
+      padding: 10px;
+      text-align: center;
+    }
+
+    table {
+      border: 1px solid;
+      width: auto;
+      color: #333;
+      background-color: #333;
+    }
+
+    th {
+      background-color: gray;
+      color: white;
+      text-align: middle;
+      padding: 8px;
+      border: none;
+      height: 1px;
+    }
+
+    td {
+      color: white;
+      text-align: middle;
+      padding: 8px;
+      border: none;
+
+    }
+
+    caption {
+      display: table-caption;
+      text-align: left;
+    }
+
+
+    @media (max-width: 600px) {
+      .grid-container {
+        grid-template-areas:
+          'header header header header'
+          'navbar navbar navbar navbar'
+          'section aside aside aside'
+          'section1 aside1 aside1 aside1'
+          'footer footer footer footer';
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>
+        header
+      </h1>
+
+    </div>
+    <div class="topnav">
+
+      <a href="http://localhost:8000/welcome/">Dashboard</a>
+      <a href="http://localhost:8000/enrollment/">Enrollment</a>
+      <a href="http://localhost:8000/enrollment_data/">Enrollment Data</a>
+      <a href="http://localhost:8000/report/">Reports</a>
+    </div>
+    <div id="section" class="item">
+      <h2>Suspect Alert</h2>
+      <table align="center">
+        <tr>
+          <th>Sr.No</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Location</th>
+          <th>Enrolled Image</th>
+          <th>Mached image</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td> 4/4/2022</td>
+          <td> 2:50 AM </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td> 4/4/2022</td>
+          <td> 2:50 AM </td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td> 4/4/2022</td>
+          <td> 2:50 AM </td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td> 4/4/2022</td>
+          <td> 2:50 AM </td>
+        </tr>
+
+      </table>
+    </div>
+    <div id="aside" class="item">
+      <h2>Live Streaming</h2>
+      <a href="http://localhost:8000/index/"> Live stream </a>
+    </div>
+    <div id="aside1" class="item">
+      <h2>image</h2>
+    </div>
+    <div id="section1" class="item">
+      <h2>Log</h2>
+      <table align="center">
+        <tr>
+          <th>Sr.No</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Race/ethnicity</th>
+          <th>Mood</th>
+          <th>Location</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td> 4/4/2022</td>
+          <td> 2:50 AM </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td> 4/4/2022</td>
+          <td> 2:50 AM </td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td> 4/4/2022</td>
+          <td> 2:50 AM </td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td> 4/4/2022</td>
+          <td> 2:50 AM </td>
+        </tr>
+      </table>
+    </div>
+
+
+    <footer class="footer">
+      <h1> footer </h1>
+    </footer>
+  </div>
+</body>
+
+</html>
